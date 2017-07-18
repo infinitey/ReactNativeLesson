@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { createLogger } from 'redux-logger'
 
 import { NavigatorHome } from './Home/HomeNavConfig'
-import dataReducer from './Home/home_reducers'
+import { dataReducer } from './Home/home_reducers'
 
 //First we need to create a middleware
 const middleware = () => {

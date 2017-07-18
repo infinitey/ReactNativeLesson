@@ -10,15 +10,15 @@ export const retrieveDataPending = () => {
 }
 
 
-export const retrieveDataSuccess = ( dataObj ) => {
+export const retrieveDataSuccess = (dataObj) => {
   return {
     type: RETRIEVE_DATA_SUCCESS,
-    isDataPending: false, 
+    isDataPending: false,
     dataObj: dataObj
   }
 }
 
-export const retrieveDataFailure = ( error ) => {
+export const retrieveDataFailure = (error) => {
   return {
     type: RETRIEVE_DATA_FAILURE,
     isDataPending: false,
