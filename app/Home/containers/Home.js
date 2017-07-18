@@ -18,6 +18,7 @@ import { fetchSampleData } from '../home_api'
 import { connect } from 'react-redux'
 
 class Home extends Component {
+
   onPressMe () {
     this.props.fetchSampleData()
   }

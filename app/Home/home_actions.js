@@ -9,7 +9,6 @@ export const retrieveDataPending = () => {
   }
 }
 
-
 export const retrieveDataSuccess = (dataObj) => {
   return {
     type: RETRIEVE_DATA_SUCCESS,

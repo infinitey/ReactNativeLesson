@@ -4,6 +4,7 @@ import {
   RETRIEVE_DATA_FAILURE
 } from './home_actions'
 
+//actual reducer functions
 import retrieveDataSuccess from './reducers/retrieve_data_success'
 import retrieveDataPending from './reducers/retrieve_data_pending'
 import retrieveDataFailure from './reducers/retrieve_data_failure'
@@ -13,6 +14,7 @@ const initialState = {
   dataObj: ''
 }
 
+//filter and call respective reducer functions according to action type
 export const dataReducer = (state = initialState, action) => {
   switch (action.type) {
     case RETRIEVE_DATA_PENDING:
