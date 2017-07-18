@@ -14,16 +14,41 @@ import {
 
 import HomeView from '../views/HomeView'
 
-export default class Home extends Component {
+import { fetchSampleData } from '../home_api'
+import { connect } from 'react-redux'
+
+class Home extends Component {
   onPressMe () {
-    console.log('yoyoyoyo')
+    this.props.fetchSampleData()
+  }
+
+  onGoBack () {
+    this.props.navigation.goBack()
   }
 
   render() {
     return (
       <HomeView
         onPress={this.onPressMe.bind(this)}
+        onGoBack={this.onGoBack.bind(this)}
       />
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  //must return a plain javascript object
+  return {
+    isDataPending: state.dataReducer.isDataPending,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  //must return a plain javascript object
+  return {
+    fetchSampleData : () => dispatch(fetchSampleData()),
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (Home)
